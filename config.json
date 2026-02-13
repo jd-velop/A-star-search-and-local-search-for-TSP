@@ -1,0 +1,16 @@
+{
+  "paradigm": "astar",
+  "seed": 42,
+
+  "m": 10,
+  "n": 10,
+  "start": [0, 0],
+  "goal": [9, 9],
+  "min_cost": 1,
+  "max_cost": 10,
+
+  "n_cities": 10,
+  "box_size": 10,
+  "restarts": 100,
+  "operator": "two-opt"
+}
