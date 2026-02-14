@@ -88,6 +88,82 @@
 # ==================================
 
 import json
+import random
+import time
+
+class Node:
+    def __init__(self, state=None, parent=None, action=None, path_cost=0):
+        self.state = state
+        self.parent = parent
+        self.action = action
+        self.path_cost = path_cost
+
+class PriorityQueue: # priority queue class for A* frontier, ligns up with pseudocode from class
+    def __init__(self):
+        self.elements = []
+
+    def push(self, node):
+        self.elements.append(node)
+    
+    def pop(self):
+        self.elements.sort(key=lambda x: x.path_cost) # sort by f(n) = g(n) + h(n)
+        return self.elements.pop(0) # pop the node with the lowest f(n)
+    
+    def is_empty(self):
+        return len(self.elements) == 0
+    
+class Graph:
+    def __init__(self, m, n, start, goal):
+        self.m = m
+        self.n = n
+        self.start = start
+        self.goal = goal
+
+        self.move_costs = {} # dictionary to store move costs: (state, action) -> cost
+
+def create_graph(m, n, start, goal):
+    return Graph(m, n, start, goal)
+
+def assign_move_costs(graph, min_cost, max_cost, seed):
+    random.seed(seed)
+    for row in range(graph.m):
+        for col in range(graph.n):
+            state = (row, col)
+            for action in ['up', 'down', 'left', 'right']:
+                if action == 'up' and row == 0:
+                    continue
+                elif action == 'down' and row == graph.m - 1:
+                    continue
+                elif action == 'left' and col == 0:
+                    continue
+                elif action == 'right' and col == graph.n - 1:
+                    continue
+                graph.move_costs[(state, action)] = random.randint(min_cost, max_cost) # seeded
+
+def ExtractPath(node): # copy+paste from project 1
+    path = []
+    while node:
+        path.append(node.state)
+        node = node.parent
+    return path[::-1] # reverse the resulting path
+
+def Succ(state, graph): # successor function for A* (generates neighbors and their costs)
+    results = []
+    for action in ['up', 'down', 'left', 'right']:
+        row, col = state
+        if action == 'up' and row > 0:
+            new_state = (row - 1, col)
+        elif action == 'down' and row < graph.m - 1:
+            new_state = (row + 1, col)
+        elif action == 'left' and col > 0:
+            new_state = (row, col - 1)
+        elif action == 'right' and col < graph.n - 1:
+            new_state = (row, col + 1)
+        else:
+            continue
+        cost = graph.move_costs[(state, action)]
+        results.append((action, new_state, cost))
+    return results
 
 def astar(config):
     m, n = config['m'], config['n']
@@ -95,6 +171,28 @@ def astar(config):
     goal = tuple(config['goal'])
     min_cost, max_cost = config['min_cost'], config['max_cost']
     seed = config['seed']
+
+    graph = create_graph(m, n, start, goal)
+    assign_move_costs(graph, min_cost, max_cost, seed)
+
+    # logic
+    frontier = PriorityQueue()
+    frontier.push(Node(state=start, path_cost=0))
+    bestCost = {}
+    while not frontier.is_empty():
+        n = frontier.pop()
+        if n.state == goal: return ExtractPath(n)
+        # expand node
+        if n.state not in bestCost or n.path_cost < bestCost[n.state]:
+            bestCost[n.state] = n.path_cost
+            # generate neighbors
+            for action, child_state, cost in Succ(n.state, graph):
+                child_path_cost= n.path_cost + cost
+                child_node = Node(state=child_state, parent=n, action=action, path_cost=child_path_cost)
+                frontier.push(child_node)
+    return None # failure if frontier is empty and goal not found
+
+
 # Number of cities: n
 # Coordinate range (or bounding box), e.g., 0..100
 # Number of random restarts: restarts
@@ -114,7 +212,8 @@ def main():
 
     paradigm = config['paradigm']
     if paradigm == 'astar':
-        astar(config)
+        result = astar(config)
+        print("Path found:", result)
     elif paradigm == 'tsp':
         tsp(config)
     else:
