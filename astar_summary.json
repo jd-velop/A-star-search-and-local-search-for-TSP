@@ -1,0 +1,29 @@
+[
+  {
+    "grid_size": "10x10",
+    "avg_steps": 18.0,
+    "avg_cost": 58.1,
+    "avg_expanded_states": 93.9,
+    "avg_generated_nodes": 341.9,
+    "avg_max_frontier": 90.0,
+    "avg_runtime_ms": 1.72
+  },
+  {
+    "grid_size": "25x25",
+    "avg_steps": 48.8,
+    "avg_cost": 151.8,
+    "avg_expanded_states": 619.9,
+    "avg_generated_nodes": 2385.1,
+    "avg_max_frontier": 269.0,
+    "avg_runtime_ms": 29.04
+  },
+  {
+    "grid_size": "50x50",
+    "avg_steps": 100.2,
+    "avg_cost": 296.1,
+    "avg_expanded_states": 2497.2,
+    "avg_generated_nodes": 9792.4,
+    "avg_max_frontier": 610.7,
+    "avg_runtime_ms": 238.78
+  }
+]

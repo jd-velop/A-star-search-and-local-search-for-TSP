@@ -1,0 +1,13 @@
+{
+  "grid_size": "25x25",
+  "m": 25,
+  "n": 25,
+  "seed": 123,
+  "steps": 48,
+  "total_cost": 165,
+  "expanded_states": 622,
+  "generated_nodes": 2392,
+  "max_frontier_size": 239,
+  "runtime_ms": 25.65,
+  "status": "success"
+}

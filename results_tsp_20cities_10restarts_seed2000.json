@@ -1,0 +1,24 @@
+{
+  "n_cities": 20,
+  "seed": 2000,
+  "restarts": 10,
+  "initial_cost": 866.77,
+  "best_cost": 335.46,
+  "improvement": 531.31,
+  "improvement_percent": 61.3,
+  "iterations_per_restart": [
+    16,
+    16,
+    17,
+    13,
+    16,
+    15,
+    15,
+    18,
+    15,
+    14
+  ],
+  "total_iterations": 155,
+  "avg_iterations": 15.5,
+  "runtime_ms": 231.82
+}

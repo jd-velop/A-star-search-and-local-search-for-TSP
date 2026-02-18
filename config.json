@@ -1,6 +1,6 @@
 {
   "paradigm": "astar",
-  "seed": 42,
+  "seed": 6000,
 
   "m": 10,
   "n": 10,
@@ -11,6 +11,6 @@
 
   "n_cities": 10,
   "box_size": 10,
-  "restarts": 100,
+  "restarts": 50,
   "operator": "two-opt"
 }

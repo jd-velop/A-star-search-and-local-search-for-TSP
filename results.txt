@@ -1,0 +1,10 @@
+"steps": 18, "total_cost": 53, "expanded_states": 99, "generated_nodes": 358, "max_frontier_size": 104, "runtime_ms": 1.81
+"steps": 18, "total_cost": 52, "expanded_states": 99, "generated_nodes": 358, "max_frontier_size": 109, "runtime_ms": 1.98,
+"steps": 18, "total_cost": 60, "expanded_states": 92, "generated_nodes": 336, "max_frontier_size": 87, "runtime_ms": 1.55
+"steps": 18, "total_cost": 65, "expanded_states": 97, "generated_nodes": 352, "max_frontier_size": 80, "runtime_ms": 1.68, 
+"steps": 18, "total_cost": 56, "expanded_states": 95, "generated_nodes": 346, "max_frontier_size": 83, "runtime_ms": 1.99, 
+"steps": 18, "total_cost": 58, "expanded_states": 94, "generated_nodes": 342, "max_frontier_size": 83, "runtime_ms": 1.58, 
+"steps": 18, "total_cost": 47, "expanded_states": 76, "generated_nodes": 283, "max_frontier_size": 88, "runtime_ms": 1.07, 
+"steps": 18, "total_cost": 55, "expanded_states": 90, "generated_nodes": 331, "max_frontier_size": 96, "runtime_ms": 1.41,
+"steps": 18, "total_cost": 63, "expanded_states": 98, "generated_nodes": 355, "max_frontier_size": 84, "runtime_ms": 1.58, 
+"steps": 18, "total_cost": 72, "expanded_states": 99, "generated_nodes": 358, "max_frontier_size": 86, "runtime_ms": 1.68,

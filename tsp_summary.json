@@ -1,0 +1,29 @@
+[
+  {
+    "n_cities": 20,
+    "avg_initial_cost": 949.8,
+    "avg_best_cost": 377.7,
+    "avg_improvement": 572.0,
+    "avg_improvement_percent": 59.9,
+    "avg_iterations_per_restart": 14.9,
+    "avg_runtime_ms": 226.19
+  },
+  {
+    "n_cities": 30,
+    "avg_initial_cost": 1501.7,
+    "avg_best_cost": 443.4,
+    "avg_improvement": 1058.3,
+    "avg_improvement_percent": 70.3,
+    "avg_iterations_per_restart": 25.3,
+    "avg_runtime_ms": 1329.12
+  },
+  {
+    "n_cities": 50,
+    "avg_initial_cost": 2592.3,
+    "avg_best_cost": 575.5,
+    "avg_improvement": 2016.7,
+    "avg_improvement_percent": 77.6,
+    "avg_iterations_per_restart": 45.4,
+    "avg_runtime_ms": 11352.73
+  }
+]

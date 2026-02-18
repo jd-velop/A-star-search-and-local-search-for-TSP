@@ -1,0 +1,13 @@
+{
+  "grid_size": "10x10",
+  "m": 10,
+  "n": 10,
+  "seed": 456,
+  "steps": 18,
+  "total_cost": 60,
+  "expanded_states": 92,
+  "generated_nodes": 336,
+  "max_frontier_size": 87,
+  "runtime_ms": 1.48,
+  "status": "success"
+}
